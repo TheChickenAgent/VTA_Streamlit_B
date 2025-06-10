@@ -3,7 +3,7 @@ openai
 langchain-openai
 fpdf
 langchain-chroma
-protobuf
+protobuf==3.20.*
 matplotlib
 google-genai
 pysqlite3-binary
