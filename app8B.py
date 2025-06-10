@@ -235,7 +235,7 @@ def chat():
                 st.markdown(message["content"])
         elif message["role"] == "assistant":
             with st.chat_message("assistant"):
-                if ["jpg", "jpeg", "png"] in message["content"]:
+                if message["content"].endswith(("jpg", "jpeg", "png")):
                     st.image(message["content"], caption="Generated image")
                 else:
                     st.markdown(message["content"])
