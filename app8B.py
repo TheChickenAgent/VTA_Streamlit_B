@@ -3,6 +3,10 @@
 # - Open QA chat: o4-mini
 # - True/False questions: o4-mini (only generation & help)
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import numpy as np
 import requests
 import streamlit as st
@@ -21,9 +25,7 @@ import re
 import pickle
 from datetime import datetime
 
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 
 
 
