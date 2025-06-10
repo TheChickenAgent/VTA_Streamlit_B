@@ -1,0 +1,9 @@
+streamlit
+openai
+langchain-openai
+fpdf
+langchain-chroma
+protobuf
+matplotlib
+google-genai
+pysqlite3-binary
