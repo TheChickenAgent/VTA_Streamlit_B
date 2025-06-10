@@ -233,6 +233,12 @@ def chat():
         if message["role"] == "references":
             with st.chat_message("references", avatar="📖"):
                 st.markdown(message["content"])
+        elif message["role"] == "assistant":
+            with st.chat_message("assistant"):
+                if isinstance(message["content"], str):
+                    st.markdown(message["content"])
+                else:
+                    st.image(message["content"], caption="Generated image")
         else:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
@@ -315,6 +321,8 @@ def chat():
                 if image is not None:
                     st.image(image, caption="Generated image")#, use_column_width=True)
             st.session_state.messages_chat.append({"role": "assistant", "content": response})
+            if image is not None:
+                st.session_state.messages_chat.append({"role": "assistant", "content": image})
             if references:
                 with st.chat_message("references", avatar="📖"):
                     if len(references) == 1:
