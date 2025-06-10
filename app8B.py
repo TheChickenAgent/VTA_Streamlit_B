@@ -235,10 +235,10 @@ def chat():
                 st.markdown(message["content"])
         elif message["role"] == "assistant":
             with st.chat_message("assistant"):
-                if isinstance(message["content"], str):
-                    st.markdown(message["content"])
-                else:
+                if ["jpg", "jpeg", "png"] in message["content"]:
                     st.image(message["content"], caption="Generated image")
+                else:
+                    st.markdown(message["content"])
         else:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
