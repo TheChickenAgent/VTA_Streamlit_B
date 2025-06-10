@@ -72,6 +72,11 @@ def get_page_numbers(page_numbers: list[str]) -> list[str]:
 
 def intro():
     st.write("# Virtual Teaching Assistant for Linear Algebra.👋 :mortar_board: :computer: :books: :school:")
+    st.write("## Application type: B")
+    st.markdown("""
+                - Open QA chat: o4-mini
+                - True/False questions: o4-mini
+                """)
     st.write("## :warning: THIS TOOL IS UNDER DEVELOPMENT :construction_worker:")
     #st.sidebar.success("Select a practice mode.")
 
